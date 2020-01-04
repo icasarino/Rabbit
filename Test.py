@@ -11,3 +11,8 @@ print("SwapBits Every Complementary Bit: bm.swapBits(bm.swapBits(bm.swapBits(a,0
 print("SwapBits Same Bit:bm.swapBits(a,2,2))",assertion(bm.swapBits(a,2,2),60)) # ==> 60
 
 
+print("LSB",bm.LSB(2810),bm.LSB(2810).bit_length(),"MSB",bm.MSB(2810),bm.MSB(2810).bit_length())
+
+
+string = "hola"
+print(string[2:3])

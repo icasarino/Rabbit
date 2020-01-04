@@ -82,7 +82,10 @@ def even(valor):
     return (valor & 1) == 0
 
 
-
+def set16bits(value):
+    while value.bit_length() < 16:
+        value <<= 1
+    return value
 
 def set32bits(value):
     while value.bit_length() < 32:
@@ -94,11 +97,16 @@ def set64bits(value):
         value <<= 1
     return value
 
+def set128bits(value):
+    while value.bit_length() < 128:
+        value <<= 1
+    return value
+	
 def MSB(value):
     MSWbitLen = value.bit_length() >> 1
-    return (value >> MSWbitLen) << MSWbitLen
+    return value >> MSWbitLen
 
 def LSB(value):
     LSWbitLen = value.bit_length() >> 1
-    return leftShift(value,LSWbitLen) >> LSWbitLen
+    return rightShift(value,LSWbitLen) >> LSWbitLen
 
